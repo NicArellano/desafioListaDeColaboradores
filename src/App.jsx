@@ -6,13 +6,16 @@ function App() {
   
 
   return (
-    <>
-      <div>
+    
+      <div className='d-flex flex-column gap-5 p-2 m-2'>
         <h1>Lista de Colaboradores</h1>
-        <Listado />
+        
+        
+        <Listado/>
+        
         
       </div>
-    </>
+    
   )
 }
 

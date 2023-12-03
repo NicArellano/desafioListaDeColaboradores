@@ -44,7 +44,7 @@ const changeInput = (e) => {
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="d-flex flex-column gap-2">
             <input type="text" 
             placeholder="Agregar nombre"
             name="nombre"
@@ -80,7 +80,7 @@ const changeInput = (e) => {
             value={formulario.telefono}
             />
 
-            <input type="submit" value="Añadir"/>
+            <input type="submit" value="Añadir" className="bg-success "/>
         </form>
         <div>
             {alert && <Alert color={alert.color} text={alert.text} />}

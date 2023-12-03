@@ -15,7 +15,7 @@ const Listado = () => {
   }
 
   return (
-    <div>
+    <div className='d-flex flex-column gap-2'>
 
     <Table striped bordered hover>
       <thead>
