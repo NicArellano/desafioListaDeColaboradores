@@ -1,7 +1,8 @@
 import { useState } from "react"
+import Alert from "./Alert"
 
 
-const Formulario = ({propsFormulario}) => {
+const Formulario = ({agregarColaborador}) => {
 
     const [formulario, setFormulario ] = useState({
         nombre: "",
@@ -11,9 +12,25 @@ const Formulario = ({propsFormulario}) => {
         telefono:""
     })
 
+    const [alert, setAlert] = useState(null)
+
 const handleSubmit= (e) =>  {
     e.preventDefault()
-    console.log("funciona" , formulario)
+    if (formulario.nombre === ""|| formulario.correo === "" || formulario.edad === "" ||
+     formulario.cargo  === "" || formulario.telefono === "") {
+        setAlert({
+            color: "rgb(233, 111, 111)" ,
+            text: "Completa todos los campos"
+        })}
+
+        else {
+            setAlert({
+                color: "rgb(164, 207, 101)",
+                text: "Colaborador añadido"
+            })
+            agregarColaborador(formulario)
+        }
+       
 }
 
 const changeInput = (e) => {
@@ -22,6 +39,7 @@ const changeInput = (e) => {
     setFormulario({...formulario , [input]: value})
    
 }
+
 
 
   return (
@@ -64,6 +82,10 @@ const changeInput = (e) => {
 
             <input type="submit" value="Añadir"/>
         </form>
+        <div>
+            {alert && <Alert color={alert.color} text={alert.text} />}
+        </div>
+        
     </div>
   )
 }
