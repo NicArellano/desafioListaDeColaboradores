@@ -29,6 +29,13 @@ const handleSubmit= (e) =>  {
                 text: "Colaborador añadido"
             })
             agregarColaborador(formulario)
+            setFormulario({
+                nombre: "",
+                correo: "",
+                edad:"",
+                cargo:"",
+                telefono:""
+            })
         }
        
 }

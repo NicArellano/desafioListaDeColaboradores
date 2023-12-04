@@ -1,11 +1,17 @@
 
 
-const Buscador = () => {
+const Buscador = ({searchChange, searchValue}) => {
+
+    const handleChange = (e) => {
+        const value = e.target.value
+        searchChange(value)
+    }
   return (
-    <div>
-        <input type="text" placeholder="Buscar por nombre" />
-       
-    </div>
+    <input type="text" 
+    placeholder="Buscar"
+    onChange={handleChange}
+    value={searchValue}
+    />
   )
 }
 
